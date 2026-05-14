@@ -1222,9 +1222,10 @@ PATCH_SELINUX() {
 }
 
 
-UPDATE_FLOATING_FEATURE() {
-    if [ "$#" -ne 3 ]; then
-        echo "Usage: UPDATE_FLOATING_FEATURE <FLOATING_FEATURE_FILE_DIRECTORY> <FLOATING_FEATURE_LINE> <VALUE>"
+APPLY_CUSTOM_FLOATING_FEATURE() {
+    echo -e ""
+    if [ "$#" -ne 1 ]; then
+        echo -e "Usage: ${FUNCNAME[0]} <FLOATING_FEATURE_FILE_DIRECTORY> <FLOATING_FEATURE_LINE> <VALUE>"
         return 1
     fi
 
